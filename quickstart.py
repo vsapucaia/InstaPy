@@ -3,14 +3,14 @@ import time
 from tempfile import gettempdir
 
 from config import config
-from config import insta_lists
+from config import lists
 
 from selenium.common.exceptions import NoSuchElementException
 
 from instapy import InstaPy
 
-insta_username = config["instagram"]["username"]
-insta_password = config["instagram"]["password"]
+username = config["instagram"]["username"]
+password = config["instagram"]["password"]
 
 # set headless_browser=True if you want to run InstaPy on a server
 
@@ -19,8 +19,8 @@ insta_password = config["instagram"]["password"]
 #   Settings.database_location = '/path/to/instapy.db'
 #   Settings.chromedriver_location = '/path/to/chromedriver'
 
-session = InstaPy(username=insta_username,
-                  password=insta_password,
+session = InstaPy(username=username,
+                  password=password,
                   headless_browser=False,
                   multi_logs=True)
 
@@ -30,32 +30,39 @@ try:
     # settings
     session.set_relationship_bounds(enabled=True,
 				 potency_ratio=-1.21,
-				  delimit_by_numbers=True,
+				  delimit_by_numbers=False,
 				   max_followers=4590,
 				    max_following=5555,
 				     min_followers=45,
 				      min_following=77)
     session.set_do_comment(True, percentage=10)
-    session.set_comments(insta_lists.comments)
+    session.set_comments(lists.comments)
 
     # actions
-    session.like_by_tags(insta_lists.tags, amount=20)
+    session.like_by_tags(lists.tags, amount=2)
 
-    # interacting with specific users
-    session.set_do_follow(enabled=False, percentage=50)
-    session.set_comments(["Cool", "Super!"])
-    session.set_do_comment(enabled=True, percentage=80)
-    session.set_do_like(True, percentage=70)
-    session.interact_by_users(['user1', 'user2', 'user3'], amount=5, randomize=True, media='Photo')
+    # # defining generic environment
+    # session.set_dont_include(lists.friends)
+    # session.set_user_interact(amount=1, randomize=True, percentage=80)
+    # session.set_do_follow(enabled=False)
+    # session.set_do_like(True, percentage=90)
+    # session.set_comments(lists.comments)
+    # session.set_do_comment(enabled=True, percentage=30)
+    #
+    # # interacting with specific users
+    # session.interact_by_users(lists.famous_people, amount=5, randomize=True)
+    #
+    # # Interact with the people that a given user is following
+    # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
+    #
+    # # Interact with the people that a given user is following
+    # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
+    #
+    # # Unfollow
+    # custom_list = ["user_1", "user_2", "user_49", "user332", "user50921", "user_n"]
+    # session.unfollow_users(amount=20, customList=(True, custom_list, "nonfollowers"), style="RANDOM",
+    #                        unfollow_after=None, sleep_delay=600)
 
-    # Interact with the people that a given user is following
-    # set_do_comment, set_do_follow and set_do_like are applicable
-    session.set_user_interact(amount=5, randomize=True, percentage=50, media='Photo')
-    session.set_do_follow(enabled=False, percentage=70)
-    session.set_do_like(enabled=False, percentage=70)
-    session.set_comments(["Cool", "Super!"])
-    session.set_do_comment(enabled=True, percentage=80)
-    session.interact_user_followers(['natgeo'], amount=10, randomize=True)
 
 except Exception as exc:
     # if changes to IG layout, upload the file to help us locate the change
