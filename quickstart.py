@@ -2,12 +2,15 @@ import os
 import time
 from tempfile import gettempdir
 
+from config import config
+from config import insta_lists
+
 from selenium.common.exceptions import NoSuchElementException
 
 from instapy import InstaPy
 
-insta_username = ''
-insta_password = ''
+insta_username = config["instagram"]["username"]
+insta_password = config["instagram"]["password"]
 
 # set headless_browser=True if you want to run InstaPy on a server
 
@@ -33,12 +36,26 @@ try:
 				     min_followers=45,
 				      min_following=77)
     session.set_do_comment(True, percentage=10)
-    session.set_comments(['aMEIzing!', 'So much fun!!', 'Nicey!'])
-    session.set_dont_include(['friend1', 'friend2', 'friend3'])
-    session.set_dont_like(['pizza', 'girl'])
+    session.set_comments(insta_lists.comments)
 
     # actions
-    session.like_by_tags(['natgeo'], amount=1)
+    session.like_by_tags(insta_lists.tags, amount=20)
+
+    # interacting with specific users
+    session.set_do_follow(enabled=False, percentage=50)
+    session.set_comments(["Cool", "Super!"])
+    session.set_do_comment(enabled=True, percentage=80)
+    session.set_do_like(True, percentage=70)
+    session.interact_by_users(['user1', 'user2', 'user3'], amount=5, randomize=True, media='Photo')
+
+    # Interact with the people that a given user is following
+    # set_do_comment, set_do_follow and set_do_like are applicable
+    session.set_user_interact(amount=5, randomize=True, percentage=50, media='Photo')
+    session.set_do_follow(enabled=False, percentage=70)
+    session.set_do_like(enabled=False, percentage=70)
+    session.set_comments(["Cool", "Super!"])
+    session.set_do_comment(enabled=True, percentage=80)
+    session.interact_user_followers(['natgeo'], amount=10, randomize=True)
 
 except Exception as exc:
     # if changes to IG layout, upload the file to help us locate the change
