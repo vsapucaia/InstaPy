@@ -41,27 +41,27 @@ try:
     # actions
     session.like_by_tags(lists.tags, amount=2)
 
-    # # defining generic environment
-    # session.set_dont_include(lists.friends)
-    # session.set_user_interact(amount=1, randomize=True, percentage=80)
-    # session.set_do_follow(enabled=False)
-    # session.set_do_like(True, percentage=90)
-    # session.set_comments(lists.comments)
-    # session.set_do_comment(enabled=True, percentage=30)
-    #
-    # # interacting with specific users
-    # session.interact_by_users(lists.famous_people, amount=5, randomize=True)
-    #
-    # # Interact with the people that a given user is following
-    # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
-    #
-    # # Interact with the people that a given user is following
-    # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
-    #
-    # # Unfollow
-    # custom_list = ["user_1", "user_2", "user_49", "user332", "user50921", "user_n"]
-    # session.unfollow_users(amount=20, customList=(True, custom_list, "nonfollowers"), style="RANDOM",
-    #                        unfollow_after=None, sleep_delay=600)
+    # defining generic environment
+    session.set_dont_include(lists.friends)
+    session.set_user_interact(amount=1, randomize=True, percentage=80)
+    session.set_do_follow(enabled=False)
+    session.set_do_like(True, percentage=90)
+    session.set_comments(lists.comments)
+    session.set_do_comment(enabled=True, percentage=30)
+
+    # interacting with specific users
+    session.interact_by_users(lists.famous_people, amount=5, randomize=True)
+
+    # Interact with the people that a given user is following
+    session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
+
+    # Interact with the people that a given user is following
+    session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
+
+    # Unfollow
+    custom_list = ["user_1", "user_2", "user_49", "user332", "user50921", "user_n"]
+    session.unfollow_users(amount=20, customList=(True, custom_list, "nonfollowers"), style="RANDOM",
+                           unfollow_after=None, sleep_delay=600)
 
 
 except Exception as exc:
