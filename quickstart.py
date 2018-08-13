@@ -1,6 +1,7 @@
 import os
 import time
 from tempfile import gettempdir
+import random
 
 from config import config
 from config import lists
@@ -28,40 +29,40 @@ try:
     session.login()
 
     # settings
-    session.set_relationship_bounds(enabled=True,
-				 potency_ratio=-1.21,
-				  delimit_by_numbers=False,
-				   max_followers=4590,
-				    max_following=5555,
-				     min_followers=45,
-				      min_following=77)
-    session.set_do_comment(True, percentage=10)
-    session.set_comments(lists.comments)
-
-    # actions
-    session.like_by_tags(lists.tags, amount=2)
+    session.set_relationship_bounds(
+        enabled=False, potency_ratio=-1.21, delimit_by_numbers=False,
+        max_followers=4590, max_following=5555, min_followers=45, min_following=77
+    )
 
     # defining generic environment
     session.set_dont_include(lists.friends)
-    session.set_user_interact(amount=1, randomize=True, percentage=80)
+    # session.set_user_interact(amount=1, randomize=True, percentage=80)
     session.set_do_follow(enabled=False)
-    session.set_do_like(True, percentage=90)
     session.set_comments(lists.comments)
+
+    # actions
+    session.set_do_comment(enabled=True, percentage=50)
+    session.like_by_tags(random.sample(lists.tags, 1), amount=2)
+
+    # interacting with specific users (FAMOUS)
     session.set_do_comment(enabled=True, percentage=30)
+    session.interact_by_users(random.sample(lists.famous_people, 1), amount=1, randomize=True)
 
-    # interacting with specific users
-    session.interact_by_users(lists.famous_people, amount=5, randomize=True)
+    # interacting with specific users (BANDS)
+    session.set_do_comment(enabled=False)
+    session.set_do_like(True, percentage=90)
+    session.interact_by_users(random.sample(lists.band_or_music, 1), amount=1, randomize=True)
 
     # Interact with the people that a given user is following
-    session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
+    session.set_do_comment(enabled=False)
+    session.set_do_like(True, percentage=90)
+    session.interact_user_following(random.sample(lists.band_or_music, 1), amount=1, randomize=True)
 
-    # Interact with the people that a given user is following
-    session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
+    # Interact with the people that follow a given user
+    # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
 
     # Unfollow
-    custom_list = ["user_1", "user_2", "user_49", "user332", "user50921", "user_n"]
-    session.unfollow_users(amount=20, customList=(True, custom_list, "nonfollowers"), style="RANDOM",
-                           unfollow_after=None, sleep_delay=600)
+    session.unfollow_users(amount=1, customList=(True, lists.next_to_unfollow(1), "all"), unfollow_after=None, sleep_delay=600)
 
 
 except Exception as exc:
