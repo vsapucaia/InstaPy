@@ -10,7 +10,6 @@ future==0.16.0
 gitdb2==2.0.4
 GitPython==2.1.11
 idna==2.7
-instagram-py==0.0.1
 jsonschema==2.6.0
 Pillow==2.9.0
 PyVirtualDisplay==0.2.1
