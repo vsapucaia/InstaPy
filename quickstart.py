@@ -22,7 +22,7 @@ password = config["instagram"]["password"]
 
 session = InstaPy(username=username,
                   password=password,
-                  headless_browser=False,
+                  headless_browser=True,
                   multi_logs=True)
 
 try:
