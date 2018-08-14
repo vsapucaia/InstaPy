@@ -15,7 +15,7 @@ unfollow = ['shanosmoranos', 'elencuentrosurflodge', 'bhakikuk', 'cali.beachwear
 unfollow_sample = ['janobelo', 'michelledesbouillons', 'silentnationusa', 'positivevibewarriors', 'wanna_be_yours_pkfr', 'haz_baz', 'steeviewu', 'foamysurf', 'yescapa', 'davidblaine', ]
 
 # Unfollow logic
-unfollow_start_date = date(2018, 8, 13)
+unfollow_start_date = date(2018, 8, 14)
 
 
 def next_to_unfollow(amount=20):

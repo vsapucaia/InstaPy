@@ -34,6 +34,11 @@ try:
         max_followers=4590, max_following=5555, min_followers=45, min_following=77
     )
 
+    # Unfollow
+    uc = 10  # unfollow count
+    u_list = lists.next_to_unfollow(uc)  # unfollow list
+    session.unfollow_users(amount=uc, customList=(True, u_list, "all"), unfollow_after=None, sleep_delay=600)
+
     # defining generic environment
     session.set_dont_include(lists.friends)
     # session.set_user_interact(amount=1, randomize=True, percentage=80)
@@ -41,29 +46,25 @@ try:
     session.set_comments(lists.comments)
 
     # actions
-    session.set_do_comment(enabled=True, percentage=50)
-    session.like_by_tags(random.sample(lists.tags, 1), amount=2)
+    session.set_do_comment(enabled=True, percentage=60)
+    session.like_by_tags(random.sample(lists.tags, 6), amount=3)
 
-    # interacting with specific users (FAMOUS)
-    session.set_do_comment(enabled=True, percentage=30)
-    session.interact_by_users(random.sample(lists.famous_people, 1), amount=1, randomize=True)
+    # # interacting with specific users (FAMOUS)
+    # session.set_do_comment(enabled=True, percentage=30)
+    # session.interact_by_users(random.sample(lists.famous_people, 1), amount=1, randomize=True)
 
     # interacting with specific users (BANDS)
     session.set_do_comment(enabled=False)
     session.set_do_like(True, percentage=90)
-    session.interact_by_users(random.sample(lists.band_or_music, 1), amount=1, randomize=True)
+    session.interact_by_users(random.sample(lists.band_or_music, 10), amount=1, randomize=True)
 
     # Interact with the people that a given user is following
     session.set_do_comment(enabled=False)
-    session.set_do_like(True, percentage=90)
-    session.interact_user_following(random.sample(lists.band_or_music, 1), amount=1, randomize=True)
+    session.set_do_like(True, percentage=30)
+    session.interact_user_following(random.sample(lists.band_or_music, 5), amount=2, randomize=True)
 
     # Interact with the people that follow a given user
     # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
-
-    # Unfollow
-    session.unfollow_users(amount=1, customList=(True, lists.next_to_unfollow(1), "all"), unfollow_after=None, sleep_delay=600)
-
 
 except Exception as exc:
     # if changes to IG layout, upload the file to help us locate the change
