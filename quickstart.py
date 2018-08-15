@@ -28,7 +28,7 @@ password = os.environ['INSTA_PASSWORD']
 session = InstaPy(username=username,
                   password=password,
                   headless_browser=True,
-                  multi_logs=True)
+                  multi_logs=True, bypass_suspicious_attempt=True)
 
 try:
     session.login()
