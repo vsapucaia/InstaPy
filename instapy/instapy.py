@@ -254,8 +254,10 @@ class InstaPy:
             self.browser = webdriver.Firefox(firefox_profile=firefox_profile)
 
         else:
-            chromedriver_location = Settings.chromedriver_location
+            chromedriver_location = '/app/.chromedriver/bin/chromedriver'
             chrome_options = Options()
+            chrome_options.binary_location = '/app/.apt/usr/bin/google-chrome'
+            chrome_options.add_argument('--disable-gpu')
             #chrome_options.add_argument("--disable-infobars")
             chrome_options.add_argument("--mute-audio")
             chrome_options.add_argument('--dns-prefetch-disable')
