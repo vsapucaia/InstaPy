@@ -10,8 +10,13 @@ from selenium.common.exceptions import NoSuchElementException
 
 from instapy import InstaPy
 
-username = config["instagram"]["username"]
-password = config["instagram"]["password"]
+# username = config["instagram"]["username"]
+# password = config["instagram"]["password"]
+# username = config["instagram"]["username"] if config["instagram"]["username"] else os.environ['INSTA_USERNAME']
+# password = config["instagram"]["password"] if config["instagram"]["password"] else os.environ['INSTA_PASSWORD']
+username = os.environ['INSTA_USERNAME']
+password = os.environ['INSTA_PASSWORD']
+
 
 # set headless_browser=True if you want to run InstaPy on a server
 
@@ -35,7 +40,7 @@ try:
     )
 
     # Unfollow
-    uc = 10  # unfollow count
+    uc = 20  # unfollow count
     u_list = lists.next_to_unfollow(uc)  # unfollow list
     session.unfollow_users(amount=uc, customList=(True, u_list, "all"), unfollow_after=None, sleep_delay=600)
 
@@ -47,7 +52,7 @@ try:
 
     # actions
     session.set_do_comment(enabled=True, percentage=60)
-    session.like_by_tags(random.sample(lists.tags, 6), amount=3)
+    session.like_by_tags(random.sample(lists.tags, 6), amount=5)
 
     # # interacting with specific users (FAMOUS)
     # session.set_do_comment(enabled=True, percentage=30)
@@ -56,12 +61,12 @@ try:
     # interacting with specific users (BANDS)
     session.set_do_comment(enabled=False)
     session.set_do_like(True, percentage=90)
-    session.interact_by_users(random.sample(lists.band_or_music, 10), amount=1, randomize=True)
+    session.interact_by_users(random.sample(lists.band_or_music, 5), amount=1, randomize=True)
 
     # Interact with the people that a given user is following
     session.set_do_comment(enabled=False)
     session.set_do_like(True, percentage=30)
-    session.interact_user_following(random.sample(lists.band_or_music, 5), amount=2, randomize=True)
+    session.interact_user_following(random.sample(lists.band_or_music, 15), amount=2, randomize=True)
 
     # Interact with the people that follow a given user
     # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
