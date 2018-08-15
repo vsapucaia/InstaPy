@@ -16,6 +16,8 @@ from instapy import InstaPy
 # password = config["instagram"]["password"] if config["instagram"]["password"] else os.environ['INSTA_PASSWORD']
 username = os.environ['INSTA_USERNAME']
 password = os.environ['INSTA_PASSWORD']
+print(username)
+print(password)
 
 
 # set headless_browser=True if you want to run InstaPy on a server
@@ -28,7 +30,7 @@ password = os.environ['INSTA_PASSWORD']
 session = InstaPy(username=username,
                   password=password,
                   headless_browser=True,
-                  multi_logs=True, bypass_suspicious_attempt=True)
+                  multi_logs=True)
 
 try:
     session.login()
