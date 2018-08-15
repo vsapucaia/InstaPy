@@ -12,10 +12,10 @@ from instapy import InstaPy
 
 # username = config["instagram"]["username"]
 # password = config["instagram"]["password"]
-# username = config["instagram"]["username"] if config["instagram"]["username"] else os.environ['INSTA_USERNAME']
-# password = config["instagram"]["password"] if config["instagram"]["password"] else os.environ['INSTA_PASSWORD']
-username = os.environ['INSTA_USERNAME']
-password = os.environ['INSTA_PASSWORD']
+username = config["instagram"]["username"] or os.environ['INSTA_USERNAME']
+password = config["instagram"]["password"] or os.environ['INSTA_PASSWORD']
+# username = os.environ['INSTA_USERNAME']
+# password = os.environ['INSTA_PASSWORD']
 print(username)
 print(password)
 
