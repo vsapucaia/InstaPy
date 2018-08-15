@@ -40,9 +40,9 @@ try:
     )
 
     # Unfollow
-    uc = 20  # unfollow count
-    u_list = lists.next_to_unfollow(uc)  # unfollow list
-    session.unfollow_users(amount=uc, customList=(True, u_list, "all"), unfollow_after=None, sleep_delay=600)
+    # uc = 20  # unfollow count
+    # u_list = lists.next_to_unfollow(uc)  # unfollow list
+    # session.unfollow_users(amount=uc, customList=(True, u_list, "all"), unfollow_after=None, sleep_delay=600)
 
     # defining generic environment
     session.set_dont_include(lists.friends)
