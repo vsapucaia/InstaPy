@@ -255,6 +255,7 @@ class InstaPy:
 
         else:
             chromedriver_location = '/app/.chromedriver/bin/chromedriver'
+
             chrome_options = Options()
             chrome_options.binary_location = '/app/.apt/usr/bin/google-chrome'
             chrome_options.add_argument('--disable-gpu')
