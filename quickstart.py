@@ -10,14 +10,8 @@ from selenium.common.exceptions import NoSuchElementException
 
 from instapy import InstaPy
 
-# username = config["instagram"]["username"]
-# password = config["instagram"]["password"]
 username = config["instagram"]["username"] or os.environ['INSTA_USERNAME']
 password = config["instagram"]["password"] or os.environ['INSTA_PASSWORD']
-# username = os.environ['INSTA_USERNAME']
-# password = os.environ['INSTA_PASSWORD']
-print(username)
-print(password)
 
 
 # set headless_browser=True if you want to run InstaPy on a server
@@ -42,9 +36,9 @@ try:
     )
 
     # Unfollow
-    # uc = 20  # unfollow count
-    # u_list = lists.next_to_unfollow(uc)  # unfollow list
-    # session.unfollow_users(amount=uc, customList=(True, u_list, "all"), unfollow_after=None, sleep_delay=600)
+    uc = 20  # unfollow count
+    u_list = lists.next_to_unfollow(uc)  # unfollow list
+    session.unfollow_users(amount=uc, customList=(True, u_list, "all"), unfollow_after=None, sleep_delay=600)
 
     # defining generic environment
     session.set_dont_include(lists.friends)
