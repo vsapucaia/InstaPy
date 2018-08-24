@@ -10,8 +10,10 @@ from selenium.common.exceptions import NoSuchElementException
 
 from instapy import InstaPy
 
-username = config["instagram"]["username"] or os.environ['INSTA_USERNAME']
-password = config["instagram"]["password"] or os.environ['INSTA_PASSWORD']
+# username = os.environ['INSTA_USERNAME'] or config["instagram"]["username"]
+# password = os.environ['INSTA_PASSWORD'] or config["instagram"]["password"]
+username = config["instagram"]["username"]
+password = config["instagram"]["password"]
 
 
 # set headless_browser=True if you want to run InstaPy on a server
@@ -48,7 +50,7 @@ try:
 
     # actions
     session.set_do_comment(enabled=True, percentage=60)
-    session.like_by_tags(random.sample(lists.tags, 6), amount=5)
+    session.like_by_tags(random.sample(lists.tags, 8), amount=5)
 
     # # interacting with specific users (FAMOUS)
     # session.set_do_comment(enabled=True, percentage=30)
@@ -62,7 +64,7 @@ try:
     # Interact with the people that a given user is following
     session.set_do_comment(enabled=False)
     session.set_do_like(True, percentage=30)
-    session.interact_user_following(random.sample(lists.band_or_music, 15), amount=2, randomize=True)
+    session.interact_user_following(random.sample(lists.band_or_music, 4), amount=10, randomize=True)
 
     # Interact with the people that follow a given user
     # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
