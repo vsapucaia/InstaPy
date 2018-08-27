@@ -38,9 +38,9 @@ try:
     )
 
     # Unfollow
-    uc = 20  # unfollow count
-    u_list = lists.next_to_unfollow(uc)  # unfollow list
-    session.unfollow_users(amount=uc, customList=(True, u_list, "all"), unfollow_after=None, sleep_delay=600)
+    # uc = 20  # unfollow count
+    # u_list = lists.next_to_unfollow(uc)  # unfollow list
+    # session.unfollow_users(amount=uc, customList=(True, u_list, "all"), unfollow_after=None, sleep_delay=600)
 
     # defining generic environment
     session.set_dont_include(lists.friends)
@@ -49,22 +49,24 @@ try:
     session.set_comments(lists.comments)
 
     # actions
-    session.set_do_comment(enabled=True, percentage=60)
-    session.like_by_tags(random.sample(lists.tags, 8), amount=5)
+    # session.set_do_comment(enabled=True, percentage=60)
+    # session.like_by_tags(random.sample(lists.tags, 8), amount=10)
 
     # # interacting with specific users (FAMOUS)
     # session.set_do_comment(enabled=True, percentage=30)
     # session.interact_by_users(random.sample(lists.famous_people, 1), amount=1, randomize=True)
 
     # interacting with specific users (BANDS)
-    session.set_do_comment(enabled=False)
-    session.set_do_like(True, percentage=90)
-    session.interact_by_users(random.sample(lists.band_or_music, 5), amount=1, randomize=True)
+    # session.set_do_comment(enabled=False)
+    # session.set_do_like(True, percentage=90)
+    # session.interact_by_users(random.sample(lists.band_or_music, 5), amount=1, randomize=True)
 
     # Interact with the people that a given user is following
-    session.set_do_comment(enabled=False)
-    session.set_do_like(True, percentage=30)
-    session.interact_user_following(random.sample(lists.band_or_music, 4), amount=10, randomize=True)
+    session.set_user_interact(amount=6, percentage=90, randomize=True)
+    session.set_do_comment(enabled=True)
+    session.set_do_like(True, percentage=10)
+    session.interact_user_following(random.sample(lists.band_or_music, 2), amount=1, randomize=True)
+    session.interact_user_following(random.sample(lists.indie_influencers, 1), amount=1, randomize=True)
 
     # Interact with the people that follow a given user
     # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
