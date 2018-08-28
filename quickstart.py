@@ -42,15 +42,19 @@ try:
     u_list = lists.next_to_unfollow(uc)  # unfollow list
     session.unfollow_users(amount=uc, customList=(True, u_list, "all"), unfollow_after=None, sleep_delay=600)
 
+    print('>>>>> #VSF: FINISHED UNFOLLOW <<<<<')
+
     # defining generic environment
     session.set_dont_include(lists.friends)
     session.set_user_interact(amount=1, randomize=True, percentage=80)
     session.set_do_follow(enabled=False)
     session.set_comments(lists.comments)
 
-    # actions
+    # REGULAR LIKES
     session.set_do_comment(enabled=True, percentage=60)
     session.like_by_tags(random.sample(lists.tags, 8), amount=10)
+
+    print('>>>>> #VSF: FINISHED LIKE BY TAGS <<<<<')
 
     # # interacting with specific users (FAMOUS)
     # session.set_do_comment(enabled=True, percentage=30)
@@ -61,15 +65,16 @@ try:
     session.set_do_like(True, percentage=90)
     session.interact_by_users(random.sample(lists.band_or_music, 5), amount=1, randomize=True)
 
+    print('>>>>> #VSF: FINISHED LIKE BANDS <<<<<')
+
     # Interact with the people that a given user is following
-    session.set_user_interact(amount=1, percentage=90, randomize=True)
+    session.set_user_interact(amount=5, percentage=90, randomize=True)
     session.set_do_comment(enabled=True, percentage=30)
     session.set_do_like(True, percentage=90)
-    session.interact_user_following(random.sample(lists.band_or_music, 4), amount=10, randomize=True)
-    session.interact_user_following(random.sample(lists.indie_influencers, 1), amount=10, randomize=True)
-
-    # Interact with the people that follow a given user
-    # session.interact_user_followers(lists.famous_people, amount=10, randomize=True)
+    session.interact_user_following(random.sample(lists.indie_influencers, 5), amount=5, randomize=True)
+    print('>>>>> #VSF: FINISHED INTERACTING INFLUENCERS <<<<<')
+    session.interact_user_following(random.sample(lists.band_or_music, 10), amount=5, randomize=True)
+    print('>>>>> #VSF: FINISHED INTERACTING BANDS <<<<<')
 
 except Exception as exc:
     # if changes to IG layout, upload the file to help us locate the change

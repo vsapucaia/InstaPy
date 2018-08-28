@@ -1,6 +1,6 @@
 from datetime import date, datetime
 
-tags = ["surfsession", "surfmusic", "indiesurf", "indie", "indiegogo", "indieband", "indiepop", "indieartist", "indielabel", "indieartists", "indiewatch", "partymusic", "newsong", "lovethissong", "favoritesong", "bestsong", "listentothis", "goodmusic", "instamusic", "indie"]
+tags = ["surfsession", "surfmusic", "indiesurf", "indie", "indiegogo", "indieband", "indiepop", "indieartist", "indielabel", "indieartists", "indiewatch", "newsong", "lovethissong", "favoritesong", "bestsong", "listentothis", "goodmusic", "instamusic", "indie"]
 
 comments = ['Awesome!', 'so cool!', 'nice!', 'really cool!', 'great!', '💙']
 
