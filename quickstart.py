@@ -68,12 +68,12 @@ try:
     print('>>>>> #VSF: FINISHED LIKE BANDS <<<<<')
 
     # Interact with the people that a given user is following
-    session.set_user_interact(amount=5, percentage=90, randomize=True)
+    session.set_user_interact(amount=2, percentage=90, randomize=True)
     session.set_do_comment(enabled=True, percentage=30)
     session.set_do_like(True, percentage=90)
-    session.interact_user_following(random.sample(lists.indie_influencers, 5), amount=5, randomize=True)
+    session.interact_user_following(lists.indie_influencers, amount=2, randomize=True)
     print('>>>>> #VSF: FINISHED INTERACTING INFLUENCERS <<<<<')
-    session.interact_user_following(random.sample(lists.band_or_music, 10), amount=5, randomize=True)
+    session.interact_user_following(random.sample(lists.band_or_music, 10), amount=2, randomize=True)
     print('>>>>> #VSF: FINISHED INTERACTING BANDS <<<<<')
 
 except Exception as exc:
