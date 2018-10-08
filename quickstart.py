@@ -1,40 +1,29 @@
-import os
-import time
-from tempfile import gettempdir
-import random
+""" Quickstart script for InstaPy usage """
+# imports
+from instapy import InstaPy
+from instapy.util import smart_run
 
+import random
 from config import config
 from config import lists
-
-from selenium.common.exceptions import NoSuchElementException
-
-from instapy import InstaPy
 
 # username = os.environ['INSTA_USERNAME'] or config["instagram"]["username"]
 # password = os.environ['INSTA_PASSWORD'] or config["instagram"]["password"]
 username = config["instagram"]["username"]
 password = config["instagram"]["password"]
 
-
-# set headless_browser=True if you want to run InstaPy on a server
-
-# set these in instapy/settings.py if you're locating the
-# library in the /usr/lib/pythonX.X/ directory:
-#   Settings.database_location = '/path/to/instapy.db'
-#   Settings.chromedriver_location = '/path/to/chromedriver'
-
+# get an InstaPy session!
+# set headless_browser=True to run InstaPy in the background
 session = InstaPy(username=username,
                   password=password,
-                  headless_browser=True,
-                  multi_logs=True)
+                  headless_browser=True)
 
-try:
-    session.login()
-
+with smart_run(session):
+    """ Activity flow """
     # settings
     session.set_relationship_bounds(
         enabled=False, potency_ratio=-1.21, delimit_by_numbers=False,
-        max_followers=4590, max_following=5555, min_followers=45, min_following=77
+        max_followers=4590, min_followers=45, min_following=77
     )
 
     # Unfollow
@@ -75,18 +64,3 @@ try:
     print('>>>>> #VSF: FINISHED INTERACTING INFLUENCERS <<<<<')
     session.interact_user_following(random.sample(lists.band_or_music, 6), amount=3, randomize=True)
     print('>>>>> #VSF: FINISHED INTERACTING BANDS <<<<<')
-
-except Exception as exc:
-    # if changes to IG layout, upload the file to help us locate the change
-    if isinstance(exc, NoSuchElementException):
-        file_path = os.path.join(gettempdir(), '{}.html'.format(time.strftime('%Y%m%d-%H%M%S')))
-        with open(file_path, 'wb') as fp:
-            fp.write(session.browser.page_source.encode('utf8'))
-        print('{0}\nIf raising an issue, please also upload the file located at:\n{1}\n{0}'.format(
-            '*' * 70, file_path))
-    # full stacktrace when raising Github issue
-    raise
-
-finally:
-    # end the bot session
-    session.end()
