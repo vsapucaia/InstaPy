@@ -4,7 +4,7 @@ tags = ["surfsession", "surfmusic", "indiesurf", "indie", "indiegogo", "indieban
 
 comments = ['cool!', 'so cool!', 'really cool!', '💙', '🤘🤘', '✌', '❤', '👏👏', '👍👍', '😍', '🤗', '🤙🤙', '👌', '🔥🔥🔥', '🤙⚡', '⚡⚡⚡']
 
-band_or_music = ['un_ane_gonflable', 'idleyouthmusic', 'fire.eyes.music', 'thechainsmokers', 'allthecoloursmusic', 'itstheexits', 'localmotionwhb', 'wearedansu', 'jeremyloops', 'baltimorebelgium', 'timfreitag', 'pressyes_music', 'thejessedaniel', 'space_lungs', 'heyoutasight', 'arnaldocostaoficial', 'snowcoats', "caricarimusic", "catnipcloud", "dangclets", "sonicblumeband", "kalonband", "martinforsell", "alex_oaiza", "machineheart", "indie_shuffle", "themovementvibe", "kyson_eye", "majesticcasual", "wa_ll_ace", "weareweslee", "bird_gangs", "feinband", "midnightandre", "krownsmusic", "leojamesconroy", "ensisrecords", "colinweeks", "koalamusic_official", "iamdesrocs", "margmusic", "benjaminjamesmusic", "leyyamusic", "soundsofneonoir", "poolsurfers", "elephant_heart", "handsomeassdan", "krisgruen", "starley", "meggiebrownmusic", "revelriesmusic", "carahfaye", "hanna_malon3", "majesticcasual", "florencerosemusic", "eliasabid", "florin.band", "dj_paddle", "vaporizemusic", "supercelofficial", "thedeadrocks", "carolinekole", "brevmusic", "pedsamp", "templetimi", "seatticmusic", "robdrabkin", "timschou", "vive.band", "gkmband", "koralyoung", "galacticwavemusic", "motherwest", "cardsmusic", "teasleymusic", "dancingonpluto", "mattshillmusic", "anthonymanker", "aquiferofficial", "straymonroe", "positionmusic", "aloudonline", "thecrookedkings", "realdjpaige", "thecabportal", "ditchdays", "oiaoiaintermedia", "thetommygunsmusic", "jeffmusic_360", "sureshaker", "ollebirde", "rosiemankato", "brotherolivermusic", "billycadden", "mooritz_s", "d.j.andre", "madhawkes", "mattywavez", "tiinu_music", "mooneye_band", "forenmusic", "gazloganmusic", "giochamba", "permanent_creeps", "ceylonceylonofficial", "matteastonmusic", "badandtheugly", "toledoband", "carissajade.audio", "bambaefx", "flybymidnight", "thezilzies", "fliprushmore", "thedanaleigh", "samshaky", "plastic_messiah", "themoniker", "myfriendtheimmigrant", "adam.g.r.o.s.s", "rexdow", "raftmark_music", "mad.haoles", "ooificial", "rebelkicksmusic", "theaztext", "okanproject", "galapaghostatx", "treadsmusic", "olamusicbranding", "theflavians", "burntband", "hannah_malon3", "cnmaofficial", "officialmcrich", ]
+band_or_music = ['kovicmusic', 'bastien.music', 'lyciomusic', 'un_ane_gonflable', 'idleyouthmusic', 'fire.eyes.music', 'thechainsmokers', 'allthecoloursmusic', 'itstheexits', 'localmotionwhb', 'wearedansu', 'jeremyloops', 'baltimorebelgium', 'timfreitag', 'pressyes_music', 'thejessedaniel', 'space_lungs', 'heyoutasight', 'arnaldocostaoficial', 'snowcoats', "caricarimusic", "catnipcloud", "dangclets", "sonicblumeband", "kalonband", "martinforsell", "alex_oaiza", "machineheart", "indie_shuffle", "themovementvibe", "kyson_eye", "majesticcasual", "wa_ll_ace", "weareweslee", "bird_gangs", "feinband", "midnightandre", "krownsmusic", "leojamesconroy", "ensisrecords", "colinweeks", "koalamusic_official", "iamdesrocs", "margmusic", "benjaminjamesmusic", "leyyamusic", "soundsofneonoir", "poolsurfers", "elephant_heart", "handsomeassdan", "krisgruen", "starley", "meggiebrownmusic", "revelriesmusic", "carahfaye", "hanna_malon3", "majesticcasual", "florencerosemusic", "eliasabid", "florin.band", "dj_paddle", "vaporizemusic", "supercelofficial", "thedeadrocks", "carolinekole", "brevmusic", "pedsamp", "templetimi", "seatticmusic", "robdrabkin", "timschou", "vive.band", "gkmband", "koralyoung", "galacticwavemusic", "motherwest", "cardsmusic", "teasleymusic", "dancingonpluto", "mattshillmusic", "anthonymanker", "aquiferofficial", "straymonroe", "positionmusic", "aloudonline", "thecrookedkings", "realdjpaige", "thecabportal", "ditchdays", "oiaoiaintermedia", "thetommygunsmusic", "jeffmusic_360", "sureshaker", "ollebirde", "rosiemankato", "brotherolivermusic", "billycadden", "mooritz_s", "d.j.andre", "madhawkes", "mattywavez", "tiinu_music", "mooneye_band", "forenmusic", "gazloganmusic", "giochamba", "permanent_creeps", "ceylonceylonofficial", "matteastonmusic", "badandtheugly", "toledoband", "carissajade.audio", "bambaefx", "flybymidnight", "thezilzies", "fliprushmore", "thedanaleigh", "samshaky", "plastic_messiah", "themoniker", "myfriendtheimmigrant", "adam.g.r.o.s.s", "rexdow", "raftmark_music", "mad.haoles", "ooificial", "rebelkicksmusic", "theaztext", "okanproject", "galapaghostatx", "treadsmusic", "olamusicbranding", "theflavians", "burntband", "hannah_malon3", "cnmaofficial", "officialmcrich", ]
 
 famous_people = ['gabrielmedina', 'wsl']
 
@@ -18,6 +18,22 @@ unfollow_sample = ['shanosmoranos', 'elencuentrosurflodge', 'bhakikuk', 'cali.be
 
 # Unfollow logic
 unfollow_start_date = date(2018, 8, 13)
+
+# dont like
+dont_likes = ['sex','nude','naked','beef','pork','seafood',
+            'egg','chicken','cheese','sausage','lobster',
+            'fisch','schwein','lamm','rind','kuh','meeresfrüchte',
+            'schaf','ziege','hummer','yoghurt','joghurt','dairy',
+            'meal','food','eat','pancake','cake','dessert',
+            'protein','essen','mahl','breakfast','lunch',
+            'dinner','turkey','truthahn','plate','bacon',
+            'sushi','burger','salmon','shrimp','steak',
+            'schnitzel','goat','oxtail','mayo','fur','leather',
+            'cream','hunt','gun','shoot','slaughter','pussy',
+            'breakfast','dinner','lunch']
+
+# prevent posts that contain some plantbased meat from being skipped
+ignore_list = ['vegan', 'veggie', 'plantbased']
 
 
 def next_to_unfollow(amount):

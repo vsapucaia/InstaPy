@@ -35,6 +35,8 @@ with smart_run(session):
 
     # defining generic environment
     session.set_dont_include(lists.friends)
+    session.set_dont_like(lists.dont_likes)
+    session.set_ignore_if_contains(lists.ignore_list)
     session.set_user_interact(amount=1, randomize=True, percentage=80)
     session.set_do_follow(enabled=False)
     session.set_comments(lists.comments)
