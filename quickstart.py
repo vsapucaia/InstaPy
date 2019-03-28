@@ -1,7 +1,10 @@
 """ Quickstart script for InstaPy usage """
+
 # imports
 from instapy import InstaPy
-from instapy.util import smart_run
+from instapy import smart_run
+from instapy import set_workspace
+
 
 import random
 from config import config
@@ -14,6 +17,7 @@ password = config["instagram"]["password"]
 
 # get an InstaPy session!
 # set headless_browser=True to run InstaPy in the background
+set_workspace(path=None)
 session = InstaPy(username=username,
                   password=password,
                   headless_browser=True)
